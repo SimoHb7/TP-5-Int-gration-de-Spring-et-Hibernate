@@ -17,6 +17,11 @@ public class ProductController {
     @Qualifier("productDaoImpl")
     private IDao<Product> productDao;
 
+    @RequestMapping("/")
+    public String index() {
+        return "redirect:/products";
+    }
+
     @RequestMapping("/products")
     public String listProducts(Model model) {
         List<Product> products = productDao.findAll();

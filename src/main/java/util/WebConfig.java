@@ -24,8 +24,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("/webjars/");
+        // Static resource handling for Tomcat 7 compatibility
         registry.addResourceHandler("/resources/**")
                 .addResourceLocations("/resources/");
     }
